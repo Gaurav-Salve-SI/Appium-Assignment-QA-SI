@@ -2,8 +2,8 @@
 Library    AppiumLibrary
 Library    Process
 Library    ImapLibrary2
-Variables    ../Pagesource/login_locators.py
-Library      ../Pagesource/login_locators.py
+Variables    ../Pagesource/Assignment_locators.py
+Library      ../Pagesource/Assignment_locators.py
 Library    String
 Library    Collections
 
@@ -50,10 +50,10 @@ Fetch OTP from Email and Verify OTP
         ${status}    run keyword and return status    Page Should Not Contain Text  ${complete_profile_continue_button}
         IF    ${status}    BREAK
     END
-    Sleep    15s
+    Sleep    5s
     Wait and click an element    ${complete_profile_continue_button}
-    Sleep    15s
+    Sleep    5s
     Wait and click an element    ${complete_profile_popup_profile_button}
-    Sleep    15s
+    Sleep    5s
     Go Back
     Wait and click an element    //android.widget.TextView[@resource-id="com.gsoc.app.staging:id/tv_read_more"]
