@@ -18,6 +18,6 @@ Open Application and Login Form
     Wait and click an element    ${login_email_address_field}
     Fetch OTP from Email and Verify OTP     sportztester04@gmail.com
     Go Back
-    &{scroll_arg}  Create Dictionary       strategy=-android uiautomator       selector=UiSelector().text("The Himalayas")
+    &{scroll_arg}  Create Dictionary       strategy=-android uiautomator       selector=new UiSelector().className("androidx.recyclerview.widget.RecyclerView").instance(1)
     Execute Script    mobile: scroll    &{scroll_arg}
-    Click Element    xpath=//*[@text='The Himalayas']
+    Element Text Should Be    android=new UiSelector().resourceId("com.gsoc.app.staging:id/tv_asset_title")    Photo Gallery 9
