@@ -8,6 +8,9 @@ Suite Setup     Start Process       appium -a localhost -p 5454 --session-overri
 Suite Teardown   Terminate Process
 Resource    ../Resources/Assignment_keywords.robot
 
+*** Variables ***
+${article_text}     Homan caps win over Jones with a count of three | Princess Auto Players' Championship
+
 *** Test Cases ***
 Open Application and Login Form
     Open Application    remote_url=http://localhost:5454     platformName=android     ignoreHiddenApiPolicyError=true
@@ -20,4 +23,4 @@ Open Application and Login Form
     Go Back
     &{scroll_arg}  Create Dictionary       strategy=-android uiautomator       selector=new UiSelector().className("androidx.recyclerview.widget.RecyclerView").instance(1)
     Execute Script    mobile: scroll    &{scroll_arg}
-    Element Text Should Be    android=new UiSelector().resourceId("com.gsoc.app.staging:id/tv_asset_title")    Photo Gallery 9
+    Element Text Should Be    android=new UiSelector().resourceId("com.gsoc.app.staging:id/tv_asset_title")    ${article_text}
